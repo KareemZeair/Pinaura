@@ -1,0 +1,266 @@
+:root {
+    --pine: #1f3a33;
+    --pine-2: #102b25;
+    --slate: #1e232b;
+    --gold: #dcc8a6;
+    --gold-dark: #9b7640;
+    --mist: #bfc7d2;
+    --ivory: #f6f4ef;
+    --paper: #fffaf5;
+    --ink: #202622;
+    --muted: #6c716d;
+    --line: rgba(32, 38, 34, 0.13);
+    --shadow: 0 26px 70px rgba(13, 26, 23, 0.22);
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Inter", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+}
+
+body {
+    margin: 0;
+
+    color: var(--ink);
+    background: var(--ivory);
+
+    font-family: var(--sans);
+    line-height: 1.6;
+}
+
+body.nav-open {
+    overflow: hidden;
+}
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 100;
+
+    padding: 10px 14px;
+
+    color: var(--ivory);
+    background: var(--pine);
+
+    border-radius: 999px;
+
+    transform: translateY(-160%);
+
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 100vh;
+
+    padding:
+            clamp(92px, 12vw, 150px)
+            clamp(18px, 4vw, 56px);
+}
+
+.section-inner {
+    position: relative;
+    z-index: 5;
+
+    width: min(1160px, 100%);
+
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: clamp(4rem, 12vw, 9.5rem);
+    font-weight: 600;
+
+    line-height: 0.85;
+
+    letter-spacing:
+            clamp(0.08em, 1.1vw, 0.16em);
+
+    white-space: nowrap;
+}
+
+h2 {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 6vw, 5rem);
+    font-weight: 600;
+
+    line-height: 0.95;
+}
+
+h3 {
+    margin: 8px 0 10px;
+
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3vw, 2.45rem);
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+
+    color: var(--gold-dark);
+
+    font-size: 0.76rem;
+    font-weight: 700;
+
+    letter-spacing: 0.34em;
+
+    text-transform: uppercase;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    padding: 13px 22px;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    border: 1px solid transparent;
+    border-radius: 999px;
+
+    transition:
+            transform 180ms ease,
+            background 180ms ease,
+            color 180ms ease,
+            border-color 180ms ease,
+            box-shadow 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    transform: translateY(-3px);
+}
+
+.button.primary {
+    color: var(--pine);
+
+    background: var(--gold);
+
+    box-shadow:
+            0 8px 26px rgba(220, 200, 166, 0.18);
+}
+
+.button.primary:hover {
+    box-shadow:
+            0 12px 32px rgba(220, 200, 166, 0.28);
+}
+
+.button.secondary {
+    color: var(--ivory);
+
+    border-color: rgba(246, 241, 232, 0.55);
+
+    background: rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(8px);
+}
+
+.button.secondary:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+            opacity 700ms ease,
+            transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.001ms !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}

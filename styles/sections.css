@@ -1,0 +1,480 @@
+/* =========================
+   LIGHT SECTIONS
+========================= */
+
+.light-section {
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(255, 250, 242, 0.86),
+                    rgba(246, 241, 232, 0.98)
+            ),
+            radial-gradient(
+                    circle at 12% 20%,
+                    rgba(201, 163, 108, 0.18),
+                    transparent 26%
+            );
+}
+
+/* =========================
+   ABOUT / CONTACT GRID
+========================= */
+
+.split,
+.contact-grid {
+    display: grid;
+
+    grid-template-columns:
+    minmax(0, 1.05fr)
+    minmax(280px, 0.95fr);
+
+    gap: clamp(36px, 7vw, 92px);
+
+    align-items: center;
+}
+
+.about-copy {
+    padding-left: clamp(0px, 4vw, 44px);
+
+    border-left: 1px solid var(--line);
+}
+
+.about-copy p {
+    max-width: 610px;
+}
+
+.values {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.values span,
+.status-pill {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    padding: 7px 13px;
+
+    color: var(--pine);
+
+    font-size: 0.7rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+
+    border: 1px solid rgba(16, 43, 37, 0.2);
+
+    border-radius: 999px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products {
+    color: var(--ivory);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(16, 43, 37, 0.98),
+                    rgba(30, 35, 40, 0.96)
+            ),
+            radial-gradient(
+                    circle at 80% 10%,
+                    rgba(201, 163, 108, 0.24),
+                    transparent 30%
+            );
+}
+
+.centered {
+    display: grid;
+
+    justify-items: center;
+
+    margin-bottom: 48px;
+
+    text-align: center;
+}
+
+.section-heading p {
+    max-width: 610px;
+}
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.product-card {
+    min-height: 470px;
+
+    padding: 22px;
+
+    background: rgba(246, 241, 232, 0.08);
+
+    border: 1px solid rgba(246, 241, 232, 0.14);
+
+    border-radius: 8px;
+
+    box-shadow:
+            0 18px 55px rgba(5, 11, 10, 0.18);
+
+    transition:
+            transform 350ms cubic-bezier(0.22, 1, 0.36, 1),
+            border-color 350ms ease,
+            box-shadow 350ms ease,
+            background 350ms ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+            rgba(220, 200, 166, 0.42);
+
+    background:
+            rgba(246, 241, 232, 0.11);
+
+    box-shadow:
+            0 28px 70px rgba(5, 11, 10, 0.30),
+            0 0 30px rgba(220, 200, 166, 0.06);
+}
+
+.product-visual {
+    position: relative;
+
+    height: 210px;
+
+    margin-bottom: 26px;
+
+    overflow: hidden;
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(246, 241, 232, 0.11),
+                    rgba(201, 163, 108, 0.16)
+            );
+
+    border: 1px solid rgba(246, 241, 232, 0.15);
+
+    border-radius: 8px;
+
+    transition:
+            transform 500ms ease,
+            background 500ms ease;
+}
+
+.product-card:hover .product-visual {
+    transform: scale(1.015);
+
+    background:
+            linear-gradient(
+                    135deg,
+                    rgba(246, 241, 232, 0.14),
+                    rgba(201, 163, 108, 0.22)
+            );
+}
+
+.product-visual::before,
+.product-visual::after {
+    position: absolute;
+
+    content: "";
+}
+
+.product-visual::before {
+    right: 50%;
+    bottom: 22px;
+
+    width: 84px;
+    height: 122px;
+
+    transform: translateX(50%);
+
+    background:
+            linear-gradient(
+                    180deg,
+                    rgba(246, 241, 232, 0.18),
+                    rgba(246, 241, 232, 0.05)
+            );
+
+    border: 1px solid rgba(201, 163, 108, 0.5);
+
+    border-radius:
+            42px 42px 10px 10px;
+}
+
+.diffuser::after {
+    top: 44px;
+    left: 50%;
+
+    width: 78px;
+    height: 110px;
+
+    border-top:
+            2px solid rgba(201, 163, 108, 0.76);
+
+    transform:
+            translateX(-50%)
+            rotate(-16deg);
+
+    box-shadow:
+            18px 4px 0 -16px rgba(201, 163, 108, 0.76),
+            -18px 4px 0 -16px rgba(201, 163, 108, 0.76);
+}
+
+.purifier::before {
+    width: 96px;
+    height: 132px;
+
+    border-radius: 18px;
+}
+
+.purifier::after,
+.dehumidifier::after {
+    right: 50%;
+    bottom: 70px;
+
+    width: 56px;
+    height: 38px;
+
+    transform: translateX(50%);
+
+    background:
+            repeating-linear-gradient(
+                    180deg,
+                    rgba(201, 163, 108, 0.84) 0 2px,
+                    transparent 2px 9px
+            );
+}
+
+.dehumidifier::before {
+    width: 104px;
+    height: 128px;
+
+    border-radius:
+            16px 16px 28px 28px;
+}
+
+.product-kicker {
+    margin: 0;
+
+    color: var(--gold);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+}
+
+.product-card p {
+    max-width: 610px;
+
+    color: color-mix(
+            in srgb,
+            currentColor 76%,
+            transparent
+    );
+}
+
+.status-pill {
+    margin-top: 18px;
+
+    color: var(--gold);
+
+    border-color:
+            rgba(201, 163, 108, 0.38);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid {
+    align-items: start;
+}
+
+.contact-note {
+    display: grid;
+
+    gap: 4px;
+
+    margin-top: 34px;
+
+    font-weight: 700;
+}
+
+.contact-note span {
+    color: var(--gold-dark);
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+.contact-form {
+    display: grid;
+
+    gap: 12px;
+
+    padding: clamp(22px, 4vw, 36px);
+
+    background: var(--paper);
+
+    border: 1px solid var(--line);
+
+    border-radius: 8px;
+
+    box-shadow:
+            0 24px 70px rgba(13, 26, 23, 0.12);
+}
+
+.contact-form label {
+    font-size: 0.72rem;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    color: var(--ink);
+
+    background: #fffdf8;
+
+    border: 1px solid rgba(32, 38, 34, 0.18);
+
+    border-radius: 8px;
+
+    outline: none;
+
+    transition:
+            border-color 160ms ease,
+            box-shadow 160ms ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--gold-dark);
+
+    box-shadow:
+            0 0 0 4px rgba(201, 163, 108, 0.18);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.hidden {
+    position: absolute;
+
+    left: -9999px;
+}
+
+.form-button {
+    width: fit-content;
+
+    margin-top: 10px;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+.form-message {
+    min-height: 24px;
+
+    margin: 4px 0 0;
+
+    color: var(--muted);
+
+    font-size: 0.88rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 16px 28px;
+
+    justify-content: space-between;
+
+    padding:
+            24px
+            clamp(18px, 4vw, 56px);
+
+    color: var(--ivory);
+
+    background: var(--pine);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 860px) {
+    .split,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-copy {
+        padding-left: 0;
+
+        border-left: 0;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .site-footer {
+        display: grid;
+
+        justify-content: start;
+    }
+}
